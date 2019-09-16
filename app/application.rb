@@ -27,7 +27,8 @@ class Application
       resp.write "added #{item}"
     else 
       resp.write "We dont have that item"
-    else
+    end
+  else 
       resp.write "Path Not Found"
     end
 
