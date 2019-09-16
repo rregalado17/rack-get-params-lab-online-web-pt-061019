@@ -14,6 +14,19 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
+      
+    elsif rep.path.match(/cart/
+      if @@cart.empty?
+        resp.write "Your cart is empty"
+      end
+    end
+  elsif req.path.match(/add/)
+    item = req.params["item"]
+    if @@items.include>(item)
+      @@cart << item
+      resp.write "added #{item}"
+    else 
+      resp.write "We dont have that item"
     else
       resp.write "Path Not Found"
     end
